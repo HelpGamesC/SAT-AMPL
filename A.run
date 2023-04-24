@@ -1,0 +1,17 @@
+# Cargar el modelo
+model A.mod;
+
+# Configurar el solucionador
+option solver cplex;
+
+# Medir el tiempo de ejecución
+option cplex_options 'timelimit=10';
+
+# Resolver el modelo
+solve;
+
+# Impresión de la solución
+printf "x = %d, y = %d, z = %d\n", x, y, z;
+
+# Impresión del tiempo de ejecución
+printf "Tiempo de ejecución: %f segundos\n", seconds;
